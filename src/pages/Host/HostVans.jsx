@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function HostVans() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = useState([]);
+
+  const typeFilter = searchParams.get("type");
+  console.log(typeFilter);
 
   useEffect(() => {
     fetch("/api/host/vans")
