@@ -34,6 +34,17 @@ export default function Vans() {
     </div>
   ));
 
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
+
   return (
     <div className="van-list-container">
       <h1>Explore our van options</h1>
@@ -42,7 +53,7 @@ export default function Vans() {
           className={`van-type simple ${
             typeFilter === "simple" ? "selected" : ""
           }`}
-          onClick={() => setSearchParams({ type: "simple" })}
+          onClick={() => handleFilterChange("type", "rugged")}
         >
           Simple
         </button>
@@ -50,7 +61,7 @@ export default function Vans() {
           className={`van-type rugged ${
             typeFilter === "rugged" ? "selected" : ""
           }`}
-          onClick={() => setSearchParams({ type: "rugged" })}
+          onClick={() => handleFilterChange("type", "rugged")}
         >
           Rugged
         </button>
@@ -58,14 +69,14 @@ export default function Vans() {
           className={`van-type luxury ${
             typeFilter === "luxury" ? "selected" : ""
           }`}
-          onClick={() => setSearchParams({ type: "luxury" })}
+          onClick={() => handleFilterChange("type", "rugged")}
         >
           Luxury
         </button>
         {typeFilter ? (
           <button
             className="van-type clear-filters"
-            onClick={() => setSearchParams({})}
+            onClick={() => handleFilterChange("type", null)}
           >
             Clear Filters
           </button>
