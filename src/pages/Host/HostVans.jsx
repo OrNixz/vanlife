@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function HostVans() {
   const [vans, setVans] = useState([]);
@@ -12,7 +12,7 @@ export default function HostVans() {
 
   const hostVansElements = vans.map((van) => (
     <Link
-      to={`/host/vans/${van.id}`}
+      to={van.id}
       key={van.id}
       className="host-van-link-wrapper"
     >
