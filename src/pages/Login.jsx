@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState({
-    emal: "",
+    email: "",
     password: "",
   });
+  const location = useLocation();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,8 +21,11 @@ export default function Login() {
     }));
   }
 
+  const message = location.state?.message;
+
   return (
     <div className="login-container">
+      {message && <h3 className="login-first">{message}</h3>}
       <h1>Sign in to your account</h1>
       <form onSubmit={handleSubmit} className="login-form">
         <input
