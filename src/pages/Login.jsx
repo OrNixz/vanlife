@@ -20,7 +20,8 @@ export default function Login() {
       .then((data) => {
         setError(null);
         localStorage.setItem("loggedin", true);
-        navigate("/host", { replace: true });
+        const redirectPath = location.state?.from || "/host";
+        navigate(redirectPath, { replace: true });
       })
       .catch((err) => {
         setError(err);
