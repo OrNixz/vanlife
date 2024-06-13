@@ -1,3 +1,18 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore/lite";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAr8k2I6zKAQSuACQpyeINbQmVkqkZB5R0",
+  authDomain: "vanlife-ornixz.firebaseapp.com",
+  projectId: "vanlife-ornixz",
+  storageBucket: "vanlife-ornixz.appspot.com",
+  messagingSenderId: "200727460596",
+  appId: "1:200727460596:web:b8dffa13727d22d5d5fca1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve(), ms));
 }
