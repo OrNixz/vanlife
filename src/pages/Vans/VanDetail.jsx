@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { getVan } from "../../../api";
+import { getVan } from "../../api";
 
 export default function VanDetail() {
   const { id } = useParams();
