@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { BsStarFill } from "react-icons/bs";
-import { getHostVans } from "../../../api";
+import { getHostVans } from "../../api";
 import { useEffect, useState } from "react";
 
 export default function Dashboard() {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { loginUser } from "../../api";
+import { loginUser } from "../api.js";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState({
